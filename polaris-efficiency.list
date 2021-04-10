@@ -1,0 +1,6 @@
+# https://polaris.docs.fairwinds.com/checks/efficiency/
+
+cpuRequestsMissing=select name from pods where data->'spec'->>'containers' <> 'limits' AND data->'spec'->>'containers' <> 'cpu'
+memoryRequestsMissing=select name from pods where data->'spec'->>'containers' <> 'limits' AND data->'spec'->>'containers' <> 'memory'
+cpuLimitsMissing=select name from pods where data->'spec'->>'containers' <> 'requests' AND data->'spec'->>'containers' <> 'cpu'
+memoryLimitsMissing=select name from pods where data->'spec'->>'containers' <> 'requests' AND data->'spec'->>'containers' <> 'memory'
